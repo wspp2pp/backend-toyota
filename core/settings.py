@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
 USER_APPS = [
     'apps.category',
-    # 'apps.product',
+    'apps.product',
     # 'apps.data_sheet',
     # 'apps.info',
 ]
