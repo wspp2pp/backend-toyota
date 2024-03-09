@@ -4,5 +4,5 @@ from .views import ListProductByCategoryView
 
 app_name = "product"
 urlpatterns = [
-    path('by-category/', ListProductByCategoryView.as_view())
+    path('by-category/<category_id>', ListProductByCategoryView.as_view())
 ]
