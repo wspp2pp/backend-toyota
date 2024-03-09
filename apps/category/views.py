@@ -5,7 +5,7 @@ from .models import Category
 
 
 @api_view(['GET'])
-def list_categories(request):
+def list_categories():
     categories = Category.objects.all()
 
     if categories:

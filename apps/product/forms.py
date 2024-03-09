@@ -28,7 +28,7 @@ class ProductAdminForm(forms.ModelForm):
                     instance.photo.save(filename, buffer, save=True)
 
                 except Exception as e:
-                    print(f"Error al procesar la imagen: {e}")
+                    print(f"Error in image process: {e}")
 
         if commit:
             instance.save()
