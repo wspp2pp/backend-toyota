@@ -44,7 +44,7 @@ USER_APPS = [
     'apps.category',
     'apps.product',
     'apps.data_sheet',
-    # 'apps.info',
+    'apps.info',
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + USER_APPS
