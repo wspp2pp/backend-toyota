@@ -9,7 +9,7 @@ from ..category.models import Category
 
 @api_view(['GET'])
 def list_product_by_category(request, category_id):
-    if category_id:
+    if category_id.isdigit():
         category = get_object_or_404(Category, id=category_id)
         products = Product.objects.filter(category=category)
         serializer = ProductSerializer(products, many=True)
