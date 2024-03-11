@@ -14,7 +14,7 @@ Este es un proyecto Django que brinda soporte al backend para las páginas descr
 
 `virtualenv venv`
 
-`source venv/bin/activate`
+`venv\Scripts\activate`
 
 
 3. **Instalar Dependencias**: Una vez que el entorno virtual esté activado, instala las dependencias del proyecto ejecutando:
