@@ -1,9 +1,9 @@
-import pytest
+from pytest import mark
 from django.urls import reverse
 from .models import Category
 
 
-@pytest.mark.django_db
+@mark.django_db
 def test_list_categories(client):
     Category.objects.create(name='Category 1')
     Category.objects.create(name='Category 2')
@@ -17,7 +17,7 @@ def test_list_categories(client):
     assert response.json()['categories'][1]['name'] == 'Category 2'
 
 
-@pytest.mark.django_db
+@mark.django_db
 def test_list_categories_no_categories(client):
     url = reverse('category:list_categories')
     response = client.get(url)

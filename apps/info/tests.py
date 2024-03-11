@@ -1,22 +1,22 @@
-import pytest
+from pytest import fixture, mark
 from rest_framework.test import APIClient
 from rest_framework import status
 from django.urls import reverse
 from .models import Info
 
 
-@pytest.fixture
+@fixture
 def client():
     return APIClient()
 
 
-@pytest.fixture
+@fixture
 def setup_data():
     Info.objects.create(name='Info 1', url='https://example.com', section=1)
     Info.objects.create(name='Info 2', url='https://example.org', section=2)
 
 
-@pytest.mark.django_db
+@mark.django_db
 def test_list_info(client, setup_data):
     url = reverse('info:list_info')
     response = client.get(url)
@@ -31,7 +31,7 @@ def test_list_info(client, setup_data):
     assert response.data['info'][1]['section'] == 2
 
 
-@pytest.mark.django_db
+@mark.django_db
 def test_list_info_no_info(client):
     url = reverse('info:list_info')
     response = client.get(url)

@@ -1,4 +1,4 @@
-import pytest
+from pytest import fixture, mark
 from rest_framework.test import APIClient
 from rest_framework import status
 from django.urls import reverse
@@ -6,12 +6,12 @@ from .models import Product, DataSheet
 from ..category.models import Category
 
 
-@pytest.fixture
+@fixture
 def client():
     return APIClient()
 
 
-@pytest.fixture
+@fixture
 def setup_data():
     category = Category.objects.create(name='Test Category')
     product = Product.objects.create(name='Test Product', price=100, year=2022, category=category)
@@ -22,7 +22,7 @@ def setup_data():
     return product
 
 
-@pytest.mark.django_db
+@mark.django_db
 def test_list_data_sheet_by_product(client, setup_data):
     product = setup_data
     url = reverse('data_sheet:list_data_sheet_by_product', kwargs={'product_id': product.id})
@@ -34,7 +34,7 @@ def test_list_data_sheet_by_product(client, setup_data):
     assert response.data[1]['title'] == 'Test DataSheet 2'
 
 
-@pytest.mark.django_db
+@mark.django_db
 def test_list_data_sheet_by_invalid_product(client):
     url = reverse('data_sheet:list_data_sheet_by_product', kwargs={'product_id': 999})
     response = client.get(url)
