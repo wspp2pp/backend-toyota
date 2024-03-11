@@ -35,6 +35,11 @@ Este es un proyecto Django que brinda soporte al backend para las páginas descr
 
 `python manage.py runserver`
 
+4. **Crear superusuario y modelos en admin:**
+
+`python manage.py createsuperuser`
+
+[Acceder al admin](http://127.0.0.1:8000/admin/)
 
 ## Endpoints
 
