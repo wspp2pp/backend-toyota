@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "9051319c-b843-4e32-bec1-dfd37801e7a9",
+		"name": "Toyota",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "410931"
+	},
+	"item": [
+		{
+			"name": "category/all/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/category/all/"
+			},
+			"response": []
+		},
+		{
+			"name": "info/all/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/info/all/"
+			},
+			"response": []
+		},
+		{
+			"name": "product/by-category/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/product/by-category/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "data-sheet/by-product/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/data-sheet/by-product/1"
+			},
+			"response": []
+		}
+	]
+}

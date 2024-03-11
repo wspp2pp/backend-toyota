@@ -52,6 +52,8 @@ Aquí se encuentran los principales endpoints de la API y una breve descripción
 
 El diseño de los mismos fue pensado desde un punto minimalista, cumpliendo lo necesario para las páginas solicitadas y delegando ciertas tareas al frontend como lo es el ordenamiento de los Products.
 
+**En el directorio `/postman` se encuentran los endpoints ya creados.**
+
 ## Correr los Test
 
 Para ejecutar los todos tests del proyecto, utiliza el siguiente comando:
